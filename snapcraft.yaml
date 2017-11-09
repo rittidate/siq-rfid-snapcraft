@@ -10,9 +10,6 @@ grade: devel # must be 'stable' to release into candidate/stable channels
 confinement: devmode # use 'strict' once you have the right plugs and slots
 
 apps:
-  rfidpoc:
-    command: wrapper.sh
-    plugs: [home, network, network-bind]
   tagReader:
     #TagReader -h IP|HOSTNAME
     command: bin/wrapper-tagreader
@@ -25,9 +22,6 @@ parts:
     source: https://github.com/rittidate/siq-rfid-poc.git
     plugin: maven
     snap: [-usr/lib/jvm/java-8-openjdk-amd64/jre/lib/security/cacerts]
-  # This script contains all the commands needed (sets env variables, launches the jar file...) to
-  # execute the application
   wrapper-tagreader:
     plugin: make
     source: .
-
