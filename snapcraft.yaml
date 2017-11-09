@@ -13,6 +13,11 @@ apps:
   rfidpoc:
     command: wrapper.sh
     plugs: [home, network, network-bind]
+  tagReader:
+    #TagReader -h IP|HOSTNAME
+    command: bin/wrapper-tagreader
+    plugs:
+      - network
 
 parts:
   # Github repository for IOTA reference implementation: https://github.com/iotaledger/iri.git
