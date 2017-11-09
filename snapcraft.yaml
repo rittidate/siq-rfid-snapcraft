@@ -10,6 +10,12 @@ grade: devel # must be 'stable' to release into candidate/stable channels
 confinement: devmode # use 'strict' once you have the right plugs and slots
 
 apps:
+  transceiver:
+    #Transceiver -p $/HOME/transceiver.properties
+    command: bin/wrapper-transceiver
+    plugs:
+      - network
+      - home
   tagReader:
     #TagReader -h IP|HOSTNAME
     command: bin/wrapper-tagreader
@@ -22,6 +28,9 @@ parts:
     source: https://github.com/rittidate/siq-rfid-poc.git
     plugin: maven
     snap: [-usr/lib/jvm/java-8-openjdk-amd64/jre/lib/security/cacerts]
+  wrapper-transceiver:
+    plugin: make
+    source: .
   wrapper-tagreader:
     plugin: make
     source: .
