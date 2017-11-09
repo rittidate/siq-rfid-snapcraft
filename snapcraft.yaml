@@ -27,6 +27,7 @@ parts:
     snap: [-usr/lib/jvm/java-8-openjdk-amd64/jre/lib/security/cacerts]
   # This script contains all the commands needed (sets env variables, launches the jar file...) to
   # execute the application
-  exec:
-    plugin: dump
+  wrapper-tagreader:
+    plugin: make
     source: .
+
