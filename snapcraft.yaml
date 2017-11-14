@@ -21,6 +21,16 @@ apps:
     command: bin/wrapper-tagreader
     plugs:
       - network
+  awsIotConnector:
+    #TagReader -h IP|HOSTNAME
+    command: bin/wrapper-awsiotconnector
+    plugs:
+      - network
+  multipleReaders:
+    #TagReader -h IP|HOSTNAME
+    command: bin/wrapper-multiplereaders
+    plugs:
+      - network
 
 parts:
   # Github repository for IOTA reference implementation: https://github.com/iotaledger/iri.git
@@ -32,5 +42,11 @@ parts:
     plugin: make
     source: .
   wrapper-tagreader:
+    plugin: make
+    source: .
+  wrapper-awsiotconnector:
+    plugin: make
+    source: .
+  wrapper-multiplereaders:
     plugin: make
     source: .

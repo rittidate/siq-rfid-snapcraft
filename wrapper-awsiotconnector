@@ -1,0 +1,3 @@
+#!/bin/sh
+export CLASSPATH=$SNAP/jar/rfidpoc-1.0-SNAPSHOT.jar:$CLASSPATH
+java com.siq.rfidpoc.AwsIotConnector $@
