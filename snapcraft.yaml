@@ -22,12 +22,10 @@ apps:
     plugs:
       - network
   awsIotConnector:
-    #TagReader -h IP|HOSTNAME
     command: bin/wrapper-awsiotconnector
     plugs:
       - network
   multipleReaders:
-    #TagReader -h IP|HOSTNAME
     command: bin/wrapper-multiplereaders
     plugs:
       - network
